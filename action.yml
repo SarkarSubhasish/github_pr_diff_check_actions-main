@@ -1,0 +1,29 @@
+name: "Check PR Diff"
+description: "Find how many times a line is added or removed in PR diff"
+author: "arghyac35"
+branding:
+  icon: "git-pull-request"
+  color: "gray-dark"
+inputs:
+  owner:
+    description: "The owner of the repository"
+    required: true
+  repo:
+    description: "The name of the repository"
+    required: true
+  pr_number:
+    description: "The number of the pull request"
+    required: true
+  github-token:
+    description: "Github token, added magically"
+    required: true
+  check:
+    description: "Text that needs to be checked in the PR diff"
+    required: true
+outputs:
+  result:
+    description: "Result after checking"
+
+runs:
+  using: "node16"
+  main: "dist/index.js"
