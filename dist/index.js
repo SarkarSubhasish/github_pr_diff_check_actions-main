@@ -63,8 +63,6 @@ function run() {
                 },
             });
             const files = (0, parse_diff_1.default)(prDiff);
-            core.exportVariable("files", files);
-            core.setOutput("files", files);
             const result = [];
             let additionCount = 0;
             let deletetionCount = 0;
@@ -83,8 +81,6 @@ function run() {
                     });
                 });
             });
-            core.exportVariable("result", result);
-            core.setOutput("result", result);
             /**
              * Create a comment on the PR with the information we compiled from the
              * list of changed files.
